@@ -1,4 +1,7 @@
-let createBlogImage = ({ blogImg, blogImgAlt }) => {
+// <div class="article-img col-2">
+//   <img src="./images/travel.gif" alt="travel-banner-image" />
+// </div>
+const createBlogImage = ({ blogImg, blogImgAlt }) => {
   let imageContainer = document.createElement("div");
   imageContainer.classList.add("article-img");
   let blogImage = document.createElement("img");
@@ -8,12 +11,18 @@ let createBlogImage = ({ blogImg, blogImgAlt }) => {
   return imageContainer;
 };
 
-let createBlogContent = ({
+// <div class="article-content">
+//   <h1>blogTitleText</h1>
+//   <h4>blogAuthorDetailsText</h4>
+//   <h3>
+//      blogContentText
+//   </h3>
+// </div>
+const createBlogContent = ({
   blogTitleText,
   blogAuthorDetailsText,
   blogContentText,
 }) => {
-  console.log(blogContentText);
   let contentContainer = document.createElement("div");
   contentContainer.classList.add("article-content");
   let blogTitle = document.createElement("h1");
@@ -28,7 +37,15 @@ let createBlogContent = ({
   return contentContainer;
 };
 
-let createBlog = (article) => {
+// <article id="articleID" class="article row"></article>
+const createBlog = (article) => {
+  // Empty existing Blog
+  let articleSection = document.getElementById("articles-section");
+  if (articleSection.hasChildNodes()) {
+    articleSection.querySelectorAll("*").forEach((node) => {
+      node.remove();
+    });
+  }
   let articleDiv = document.createElement("article");
   articleDiv.id = article.id.$oid;
   articleDiv.classList.add("article", "row");
@@ -46,7 +63,22 @@ let createBlog = (article) => {
       blogContentText: article.blogContent,
     })
   );
-  return articleDiv;
+  articleSection.appendChild(articleDiv);
 };
+
+// This file will create following Markup
+
+// <article id="articleID" class="article row">
+//    <div class="article-img col-2">
+//      <img src="./images/travel.gif" alt="travel-banner-image" />
+//    </div>
+//    <div class="article-content">
+//      <h1>blogTitleText</h1>
+//      <h4>blogAuthorDetailsText</h4>
+//      <h3>
+//          blogContentText
+//      </h3>
+//    </div>
+// </article>
 
 export { createBlog };
