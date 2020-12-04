@@ -1,66 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/style.css" />
-    <script
-      src="https://kit.fontawesome.com/58a7331457.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
-    <title>Feather</title>
-  </head>
-  <body>
-    <nav class="navbar">
-      <ul class="navbar-links">
-        <li>
-          <a class="logo-box" href="#">
-            <img
-              class="logo"
-              src="./images/blog-feather-logo.svg"
-              alt="feather-logo-img"
-            />
-          </a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <script src="https://kit.fontawesome.com/58a7331457.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+  <title>Feather</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul class="navbar-links">
+      <li>
+        <a class="logo-box" href="#">
+          <img class="logo" src="./images/blog-feather-logo.svg" alt="feather-logo-img" />
+        </a>
+      </li>
+      <li class="navbar-link-item">
+        <a href="#travel"><i class="fas fa-plane fa-fw"></i></a>
+      </li>
+      <li class="navbar-link-item">
+        <a href="#expense"><i class="fas fa-rupee-sign fa-fw"></i></a>
+      </li>
+      <li class="navbar-link-item">
+        <a href="#eat"><i class="fas fa-hamburger fa-fw"></i></a>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <section id="articles-section" class="articles"></section>
+    <section class="related-articles">
+      <h1 class="related-articles-header">Related Articles</h1>
+      <div id="related-articles-container"></div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <img class="developer-avatar" src="./images/avatar.png" alt="" />
+      <h1 class="developer-info">Abhay Tank</h1>
+      <ul class="social-links">
+        <li class="social-link">
+          <i class="fab fa-facebook"></i>
         </li>
-        <li class="navbar-link-item">
-          <a href="#travel"><i class="fas fa-plane fa-fw"></i></a>
+        <li class="social-link">
+          <i class="fab fa-twitter"></i>
         </li>
-        <li class="navbar-link-item">
-          <a href="#expense"><i class="fas fa-rupee-sign fa-fw"></i></a>
+        <li class="social-link">
+          <i class="fab fa-instagram-square"></i>
         </li>
-        <li class="navbar-link-item">
-          <a href="#eat"><i class="fas fa-hamburger fa-fw"></i></a>
+        <li class="social-link">
+          <i class="fab fa-whatsapp"></i>
         </li>
       </ul>
-    </nav>
-    <main>
-      <section id="articles-section" class="articles"></section>
-      <section class="related-articles">
-        <h1 class="related-articles-header">Related Articles</h1>
-        <div id="related-articles-container"></div>
-      </section>
-    </main>
-    <footer>
-      <div class="footer-content">
-        <img class="developer-avatar" src="./images/avatar.png" alt="" />
-        <h1 class="developer-info">Abhay Tank</h1>
-        <ul class="social-links">
-          <li class="social-link">
-            <i class="fab fa-facebook"></i>
-          </li>
-          <li class="social-link">
-            <i class="fab fa-twitter"></i>
-          </li>
-          <li class="social-link">
-            <i class="fab fa-instagram-square"></i>
-          </li>
-          <li class="social-link">
-            <i class="fab fa-whatsapp"></i>
-          </li>
-        </ul>
-      </div>
-    </footer>
-    <script src="./src/app.js" type="module"></script>
-  </body>
+    </div>
+  </footer>
+  <div id="loadingDiv" class="loading">
+    <img src="./images/blog-feather-logo.svg" alt="feather-logo-img" />
+    <h1>Loading...</h1>
+  </div>
+  <script src="./src/app.js" type="module"></script>
+</body>
+
 </html>

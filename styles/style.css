@@ -42,6 +42,28 @@ hr {
   height: 1px;
 }
 
+.loading {
+  z-index: 2;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--third-color);
+}
+
+.loading h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 3rem;
+  font-weight: lighter;
+}
+
 .navbar {
   margin: 0;
   padding: 0;

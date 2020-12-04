@@ -19,6 +19,7 @@ window.onload = () => {
   blogArticles = fetchData();
   blogArticles.then((data) => {
     loadBlog(data[0].id.$oid);
+    document.getElementById("loadingDiv").style.display = "none";
   });
 };
 window.loadBlog = loadBlog;
