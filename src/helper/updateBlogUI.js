@@ -58,8 +58,7 @@ const createBlog = (article) => {
   articleDiv.appendChild(
     createBlogContent({
       blogTitleText: article.blogTitle,
-      blogAuthorDetailsText:
-        article.blogAuthor + ` ${new Date(article.blogCreatedAt)}`,
+      blogAuthorDetailsText: article.blogAuthor + ` - ` + article.blogCreatedAt,
       blogContentText: article.blogContent,
     })
   );

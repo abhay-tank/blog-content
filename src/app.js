@@ -1,27 +1,24 @@
 import { createBlog } from "./helper/updateBlogUI.js";
 import { updateRelatedLinks } from "./helper/updateRelatedLinksUI.js";
-const blogAPIURL = "https://my.api.mockaroo.com/feather.json?key=6d5dc7d0";
-let blogArticles = [];
+import { fetchData } from "./services/fetchData.js";
+// Blog Promise
+let blogArticles;
 // Blog Data Schema
 // id | blogAuthor | blogContent | blogTitle | blogImg | blogImgAlt | blogCreatedAt
 //  blog id in form of mongoid therefore syntax blogArticles[0].id.$oid
 
-// Return New Array without currentBlog
-const filterCurrentBlog = (currBlog) =>
-  blogArticles.filter((blog) => blog != currBlog);
-
 const loadBlog = (blogID) => {
-  let blog = blogArticles.find((blog) => blog.id.$oid == blogID);
-  createBlog(blog);
-  updateRelatedLinks(filterCurrentBlog(blog));
+  blogArticles.then((blogs) => {
+    let currBlog = blogs.find((blog) => blog.id.$oid == blogID);
+    createBlog(currBlog);
+    updateRelatedLinks(blogs.filter((blog) => blog != currBlog));
+  });
 };
 
 window.onload = () => {
-  fetch(blogAPIURL)
-    .then(async (data) => {
-      blogArticles = await data.json();
-      loadBlog(blogArticles[0].id.$oid);
-    })
-    .catch((Error) => console.error(Error));
+  blogArticles = fetchData();
+  blogArticles.then((data) => {
+    loadBlog(data[0].id.$oid);
+  });
 };
 window.loadBlog = loadBlog;
